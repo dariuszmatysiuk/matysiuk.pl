@@ -1,1075 +1,1241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matysiuk sp. z o.o. - Automatyzacja Procesów Biznesowych, AI & IoT</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Matysiuk sp. z o.o. - Automatyzacja Procesów Biznesowych, AI & IoT
+    </title>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNGZ8ZDCBK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BNGZ8ZDCBK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-BNGZ8ZDCBK');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TB59QD');</script>
-<!-- End Google Tag Manager -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      gtag("config", "G-BNGZ8ZDCBK");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TB59QD");
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary: #0F172A;
-            --primary-blue: #1E40AF;
-            --accent-blue: #2563EB;
-            --light-blue: #EFF6FF;
-            --sky-blue: #DBEAFE;
-            --text-main: #1E293B;
-            --text-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --white: #FFFFFF;
-            --border: #E2E8F0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --radius: 12px;
-        }
+      :root {
+        --primary: #0f172a;
+        --primary-blue: #1e40af;
+        --accent-blue: #2563eb;
+        --light-blue: #eff6ff;
+        --sky-blue: #dbeafe;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --bg-light: #f8fafc;
+        --white: #ffffff;
+        --border: #e2e8f0;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg:
+          0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --radius: 12px;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            scroll-behavior: smooth;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        scroll-behavior: smooth;
+      }
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
 
-        /* Header & Navigation */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
+      /* Header & Navigation */
+      header {
+        position: sticky;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+      }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+      .logo {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-        .logo span {
-            color: var(--accent-blue);
-        }
+      .logo span {
+        color: var(--accent-blue);
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        list-style: none;
+      }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
+      .nav-links a:hover {
+        color: var(--accent-blue);
+      }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            border-radius: var(--radius);
-            text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-        }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        border: none;
+        font-size: 0.95rem;
+      }
 
-        .btn-primary {
-            background-color: var(--accent-blue);
-            color: var(--white);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-        }
+      .btn-primary {
+        background-color: var(--accent-blue);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      }
 
-        .btn-primary:hover {
-            background-color: var(--primary-blue);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
-        }
+      .btn-primary:hover {
+        background-color: var(--primary-blue);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+      }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-        }
+      .btn-outline {
+        background-color: transparent;
+        color: var(--accent-blue);
+        border: 2px solid var(--accent-blue);
+      }
 
-        .btn-outline:hover {
-            background-color: var(--light-blue);
-        }
+      .btn-outline:hover {
+        background-color: var(--light-blue);
+      }
 
-        /* Mobile Nav Toggle */
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
+      /* Mobile Nav Toggle */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+      }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
-            padding: 5rem 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+        padding: 5rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
 
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--sky-blue);
+        color: var(--primary-blue);
+        padding: 0.4rem 0.9rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero h1 span {
+        color: var(--accent-blue);
+      }
+
+      .hero p {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+
+      .micro-copy {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .hero-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border);
+        position: relative;
+      }
+
+      .hero-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .status-dot {
+        width: 10px;
+        height: 10px;
+        background-color: #10b981;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+      }
+
+      .flow-step {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: var(--bg-light);
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-left: 3px solid var(--accent-blue);
+      }
+
+      /* Section Layouts */
+      section {
+        padding: 5rem 1.5rem;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 3.5rem auto;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Grid Layouts */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        background-color: var(--light-blue);
+        color: var(--accent-blue);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* Problem Section */
+      .problems {
+        background-color: var(--white);
+      }
+
+      .problem-card {
+        border-top: 4px solid #ef4444;
+      }
+
+      /* Solutions Section */
+      .solutions {
+        background-color: var(--bg-light);
+      }
+
+      .solution-card {
+        border-top: 4px solid var(--accent-blue);
+      }
+
+      /* USP Section */
+      .usp-box {
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 20px;
+        padding: 4rem 3rem;
+      }
+
+      .usp-box h2 {
+        color: var(--white);
+        margin-bottom: 2.5rem;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .usp-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .usp-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1.75rem;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .usp-item h3 {
+        color: var(--sky-blue);
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .usp-item p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+      }
+
+      /* Case Studies */
+      .case-study-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .case-study-header {
+        background: var(--light-blue);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .case-study-header h3 {
+        color: var(--primary-blue);
+        font-size: 1.25rem;
+      }
+
+      .case-study-body {
+        padding: 2rem;
+      }
+
+      .case-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.6rem;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      .badge-before {
+        background-color: #fee2e2;
+        color: #991b1b;
+      }
+
+      .badge-after {
+        background-color: #d1fae5;
+        color: #065f46;
+      }
+
+      .case-box {
+        margin-bottom: 1.25rem;
+      }
+
+      .case-box p {
+        font-size: 0.95rem;
+        color: var(--text-main);
+      }
+
+      /* Pricing Section */
+      .pricing-card {
+        background: var(--white);
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .pricing-card.featured {
+        border: 2px solid var(--accent-blue);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .featured-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent-blue);
+        color: var(--white);
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 0.25rem 1rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+      }
+
+      .price-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .price-desc {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+        min-height: 40px;
+      }
+
+      .price-val {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .price-val span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      .price-features {
+        list-style: none;
+        margin-bottom: 2rem;
+        flex-grow: 1;
+      }
+
+      .price-features li {
+        padding: 0.6rem 0;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.9rem;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .price-features li::before {
+        content: "✓";
+        color: var(--accent-blue);
+        font-weight: bold;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--primary) 100%
+        );
+        color: var(--white);
+        text-align: center;
+        padding: 5rem 1.5rem;
+      }
+
+      .cta-section h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+        color: #93c5fd;
+        max-width: 650px;
+        margin: 0 auto 2.5rem auto;
+      }
+
+      .steps-inline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 900px;
+        margin: 0 auto 3rem auto;
+        text-align: left;
+      }
+
+      .step-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.25rem;
+        border-radius: var(--radius);
+        backdrop-filter: blur(4px);
+      }
+
+      .step-num {
+        width: 28px;
+        height: 28px;
+        background: var(--accent-blue);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .step-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .step-item p {
+        font-size: 0.85rem;
+        color: #dbeafe;
+        margin: 0;
+      }
+
+      /* Form Card */
+      .form-card {
+        background: var(--white);
+        padding: 2.5rem;
+        border-radius: 16px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: var(--shadow-lg);
+        color: var(--text-main);
+        text-align: left;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: var(--primary);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: border-color 0.2s;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary);
+        color: #94a3b8;
+        padding: 3rem 1.5rem 2rem 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .footer-logo {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 992px) {
         .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
+          grid-template-columns: 1fr;
         }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--sky-blue);
-            color: var(--primary-blue);
-            padding: 0.4rem 0.9rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero h1 span {
-            color: var(--accent-blue);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            align-items: flex-start;
-        }
-
-        .micro-copy {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .hero-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .hero-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #10B981;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
-        }
-
-        .flow-step {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--bg-light);
-            padding: 0.85rem 1rem;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-left: 3px solid var(--accent-blue);
-        }
-
-        /* Section Layouts */
-        section {
-            padding: 5rem 1.5rem;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3.5rem auto;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Grid Layouts */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background-color: var(--light-blue);
-            color: var(--accent-blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Problem Section */
-        .problems {
-            background-color: var(--white);
-        }
-
-        .problem-card {
-            border-top: 4px solid #EF4444;
-        }
-
-        /* Solutions Section */
-        .solutions {
-            background-color: var(--bg-light);
-        }
-
-        .solution-card {
-            border-top: 4px solid var(--accent-blue);
-        }
-
-        /* USP Section */
-        .usp-box {
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 20px;
-            padding: 4rem 3rem;
-        }
-
-        .usp-box h2 {
-            color: var(--white);
-            margin-bottom: 2.5rem;
-            text-align: center;
-            font-size: 2rem;
-        }
-
+        .grid-3,
         .usp-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .usp-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.75rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .usp-item h3 {
-            color: var(--sky-blue);
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .usp-item p {
-            color: #94A3B8;
-            font-size: 0.95rem;
-        }
-
-        /* Case Studies */
-        .case-study-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .case-study-header {
-            background: var(--light-blue);
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .case-study-header h3 {
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-        }
-
-        .case-study-body {
-            padding: 2rem;
-        }
-
-        .case-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge-before {
-            background-color: #FEE2E2;
-            color: #991B1B;
-        }
-
-        .badge-after {
-            background-color: #D1FAE5;
-            color: #065F46;
-        }
-
-        .case-box {
-            margin-bottom: 1.25rem;
-        }
-
-        .case-box p {
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
-        /* Pricing Section */
-        .pricing-card {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .pricing-card.featured {
-            border: 2px solid var(--accent-blue);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-blue);
-            color: var(--white);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-        }
-
-        .price-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .price-desc {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-            min-height: 40px;
-        }
-
-        .price-val {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .price-val span {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .price-features li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #F1F5F9;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .price-features li::before {
-            content: "✓";
-            color: var(--accent-blue);
-            font-weight: bold;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 1.5rem;
-        }
-
-        .cta-section h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: #93C5FD;
-            max-width: 650px;
-            margin: 0 auto 2.5rem auto;
-        }
-
         .steps-inline {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto 3rem auto;
-            text-align: left;
+          grid-template-columns: 1fr;
         }
+      }
 
-        .step-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.25rem;
-            border-radius: var(--radius);
-            backdrop-filter: blur(4px);
+      @media (max-width: 768px) {
+        .mobile-toggle {
+          display: block;
         }
-
-        .step-num {
-            width: 28px;
-            height: 28px;
-            background: var(--accent-blue);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--white);
+          flex-direction: column;
+          padding: 1.5rem;
+          border-bottom: 1px solid var(--border);
+          box-shadow: var(--shadow-md);
         }
-
-        .step-item h4 {
-            font-size: 1rem;
-            margin-bottom: 0.35rem;
+        .nav-links.active {
+          display: flex;
         }
-
-        .step-item p {
-            font-size: 0.85rem;
-            color: #DBEAFE;
-            margin: 0;
+        .grid-3,
+        .grid-2,
+        .grid-4,
+        .usp-grid {
+          grid-template-columns: 1fr;
         }
-
-        /* Form Card */
-        .form-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-lg);
-            color: var(--text-main);
-            text-align: left;
+        .hero h1 {
+          font-size: 2.1rem;
         }
-
-        .form-group {
-            margin-bottom: 1.25rem;
+        .usp-box {
+          padding: 2.5rem 1.5rem;
         }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            transition: border-color 0.2s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: #94A3B8;
-            padding: 3rem 1.5rem 2rem 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .footer-logo {
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-            .grid-3, .usp-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .steps-inline {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 1.5rem;
-                border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow-md);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .grid-3, .grid-2, .grid-4, .usp-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2.1rem;
-            }
-            .usp-box {
-                padding: 2.5rem 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB59QD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TB59QD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Header -->
     <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Matysiuk <span>sp. z o.o.</span></a>
-            <button class="mobile-toggle" id="mobileToggle">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#problemy">Wyzwania</a></li>
-                <li><a href="#rozwiazania">Rozwiązania</a></li>
-                <li><a href="#dlaczego-my">O nas</a></li>
-                <li><a href="#case-studies">Efekty</a></li>
-                <li><a href="#cennik">Oferta</a></li>
-                <li><a href="#kontakt" class="btn btn-primary" style="color: white;">Audyt 15 min</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <a href="#" class="logo">Matysiuk <span>sp. z o.o.</span></a>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#problemy">Wyzwania</a></li>
+          <li><a href="#rozwiazania">Rozwiązania</a></li>
+          <li><a href="#dlaczego-my">O nas</a></li>
+          <li><a href="#case-studies">Efekty</a></li>
+          <li><a href="#cennik">Oferta</a></li>
+          <li>
+            <a href="#kontakt" class="btn btn-primary" style="color: white"
+              >Audyt 15 min</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div>
-                <div class="badge">⚙️ Inteligentna Automatyzacja B2B</div>
-                <h1>Odzyskaj <span>40+ godzin</span> tygodniowo w swoim zespole</h1>
-                <p>Eliminujemy powtarzalne, ręczne zadania. Łączymy systemy no-code (n8n), agenty AI oraz akwizycję danych z urządzeń i produkcji (IoT) w jeden niezawodny system.</p>
-                <div class="hero-cta">
-                    <a href="#kontakt" class="btn btn-primary btn-lg">Umów bezpłatny, 15-minutowy audyt</a>
-                    <div class="micro-copy">
-                        <span>✓ Bez zobowiązań</span> • <span>✓ Konkretne wskazówki ROI</span>
-                    </div>
-                </div>
+      <div class="hero-container">
+        <div>
+          <div class="badge">⚙️ Inteligentna Automatyzacja B2B</div>
+          <h1>Odzyskaj <span>40+ godzin</span> tygodniowo w swoim zespole</h1>
+          <p>
+            Eliminujemy powtarzalne, ręczne zadania. Łączymy systemy no-code
+            (n8n), agenty AI oraz akwizycję danych z urządzeń i produkcji (IoT)
+            w jeden niezawodny system.
+          </p>
+          <div class="hero-cta">
+            <a href="#kontakt" class="btn btn-primary btn-lg"
+              >Umów bezpłatny, 15-minutowy audyt</a
+            >
+            <div class="micro-copy">
+              <span>✓ Bez zobowiązań</span> •
+              <span>✓ Konkretne wskazówki ROI</span>
             </div>
-            <div class="hero-card">
-                <div class="hero-card-header">
-                    <span class="status-dot"></span>
-                    <strong>Przykładowy Przepływ Automatyzacji</strong>
-                </div>
-                <div class="flow-step">
-                    <span>1. Zapytanie E-mail / Lead</span>
-                </div>
-                <div class="flow-step">
-                    <span>2. Analiza dokumentu PDF przez AI</span>
-                </div>
-                <div class="flow-step">
-                    <span>3. Integracja danych w CRM & ERP</span>
-                </div>
-                <div class="flow-step">
-                    <span>4. Wygenerowanie wyceny w 2 minuty</span>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="status-dot"></span>
+            <strong>Przykładowy Przepływ Automatyzacji</strong>
+          </div>
+          <div class="flow-step">
+            <span>1. Zapytanie E-mail / Lead</span>
+          </div>
+          <div class="flow-step">
+            <span>2. Analiza dokumentu PDF przez AI</span>
+          </div>
+          <div class="flow-step">
+            <span>3. Integracja danych w CRM & ERP</span>
+          </div>
+          <div class="flow-step">
+            <span>4. Wygenerowanie wyceny w 2 minuty</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Problems Section -->
     <section id="problemy" class="problems">
-        <div class="container">
-            <div class="section-header">
-                <h2>Z czym zmagają się nowoczesne firmy?</h2>
-                <p>Ręczne procesy hamują rozwój przedsiębiorstw i generują niepotrzebne koszty operacyjne.</p>
-            </div>
-            <div class="grid-4">
-                <div class="card problem-card">
-                    <div class="card-icon">⏳</div>
-                    <h3>Ręczny transfer danych</h3>
-                    <p>Przepisywanie informacji między skrzynkami e-mail, Arkuszami Google i CRM marnuje godziny pracy.</p>
-                </div>
-                <div class="card problem-card">
-                    <div class="card-icon">⚠️</div>
-                    <h3>Błędy i opóźnienia</h3>
-                    <p>Przeoczone wiadomości i spóźnione raporty wpływają bezpośrednio na relacje z klientami i koszty.</p>
-                </div>
-                <div class="card problem-card">
-                    <div class="card-icon">🔌</div>
-                    <h3>Odizolowane systemy</h3>
-                    <p>Aplikacje biznesowe i park maszynowy nie komunikują się ze sobą w czasie rzeczywistym.</p>
-                </div>
-                <div class="card problem-card">
-                    <div class="card-icon">📉</div>
-                    <h3>Frustracja zespołu</h3>
-                    <p>Wykwalifikowani specjaliści spędzają czas na powtarzalnej rutynie zamiast na zadaniach przynoszących zysk.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Z czym zmagają się nowoczesne firmy?</h2>
+          <p>
+            Ręczne procesy hamują rozwój przedsiębiorstw i generują niepotrzebne
+            koszty operacyjne.
+          </p>
         </div>
+        <div class="grid-4">
+          <div class="card problem-card">
+            <div class="card-icon">⏳</div>
+            <h3>Ręczny transfer danych</h3>
+            <p>
+              Przepisywanie informacji między skrzynkami e-mail, Arkuszami
+              Google i CRM marnuje godziny pracy.
+            </p>
+          </div>
+          <div class="card problem-card">
+            <div class="card-icon">⚠️</div>
+            <h3>Błędy i opóźnienia</h3>
+            <p>
+              Przeoczone wiadomości i spóźnione raporty wpływają bezpośrednio na
+              relacje z klientami i koszty.
+            </p>
+          </div>
+          <div class="card problem-card">
+            <div class="card-icon">🔌</div>
+            <h3>Odizolowane systemy</h3>
+            <p>
+              Aplikacje biznesowe i park maszynowy nie komunikują się ze sobą w
+              czasie rzeczywistym.
+            </p>
+          </div>
+          <div class="card problem-card">
+            <div class="card-icon">📉</div>
+            <h3>Frustracja zespołu</h3>
+            <p>
+              Wykwalifikowani specjaliści spędzają czas na powtarzalnej rutynie
+              zamiast na zadaniach przynoszących zysk.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Solutions Section -->
     <section id="rozwiazania" class="solutions">
-        <div class="container">
-            <div class="section-header">
-                <h2>Budujemy cyfrowe autostrady dla Twoich danych</h2>
-                <p>Łączymy najnowocześniejsze narzędzia w dopasowane, bezpieczne ekosystemy dla MŚP i przemysłu.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card solution-card">
-                    <div class="card-icon">🔄</div>
-                    <h3>Automatyzacja n8n</h3>
-                    <p>Projektujemy i wdrażamy bezpieczne scenariusze łączące Twoje systemy biznesowe bez konieczności kosztownego kodowania od zera.</p>
-                </div>
-                <div class="card solution-card">
-                    <div class="card-icon">🧠</div>
-                    <h3>Agenci AI & LLM</h3>
-                    <p>Wdrażamy modele sztucznej inteligencji do analizy dokumentów PDF, klasyfikacji wiadomości i automatycznej obsługi zapytań.</p>
-                </div>
-                <div class="card solution-card">
-                    <div class="card-icon">📡</div>
-                    <h3>Integracja IoT & Produkcji</h3>
-                    <p>Łączymy cyfrowy obieg informacji z odczytami z czujników, mikrokontrolerów i maszyn przemysłowych.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Budujemy cyfrowe autostrady dla Twoich danych</h2>
+          <p>
+            Łączymy najnowocześniejsze narzędzia w dopasowane, bezpieczne
+            ekosystemy dla MŚP i przemysłu.
+          </p>
         </div>
+        <div class="grid-3">
+          <div class="card solution-card">
+            <div class="card-icon">🔄</div>
+            <h3>Automatyzacja n8n</h3>
+            <p>
+              Projektujemy i wdrażamy bezpieczne scenariusze łączące Twoje
+              systemy biznesowe bez konieczności kosztownego kodowania od zera.
+            </p>
+          </div>
+          <div class="card solution-card">
+            <div class="card-icon">🧠</div>
+            <h3>Agenci AI & LLM</h3>
+            <p>
+              Wdrażamy modele sztucznej inteligencji do analizy dokumentów PDF,
+              klasyfikacji wiadomości i automatycznej obsługi zapytań.
+            </p>
+          </div>
+          <div class="card solution-card">
+            <div class="card-icon">📡</div>
+            <h3>Integracja IoT & Produkcji</h3>
+            <p>
+              Łączymy cyfrowy obieg informacji z odczytami z czujników,
+              mikrokontrolerów i maszyn przemysłowych.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- USP Section -->
     <section id="dlaczego-my">
-        <div class="container">
-            <div class="usp-box">
-                <h2>Dlaczego przedsiębiorcy wybierają współpracę z nami?</h2>
-                <div class="usp-grid">
-                    <div class="usp-item">
-                        <h3>Inżynieria + Biznes</h3>
-                        <p>Łączymy bogate doświadczenie inżynieryjne z praktycznym rozumieniem procesów biznesowych i operacyjnych.</p>
-                    </div>
-                    <div class="usp-item">
-                        <h3>Bezpieczeństwo i Prywatność</h3>
-                        <p>Scenariusze wdrażamy na Twoich dedykowanych serwerach. Twoje wrażliwe dane nie trafiają do niekontrolowanych chmur.</p>
-                    </div>
-                    <div class="usp-item">
-                        <h3>Brak Długu Technicznego</h3>
-                        <p>Tworzymy architekturę skrojoną na miarę, którą można łatwo skalować i modyfikować w miarę rozwoju firmy.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="usp-box">
+          <h2>Dlaczego przedsiębiorcy wybierają współpracę z nami?</h2>
+          <div class="usp-grid">
+            <div class="usp-item">
+              <h3>Inżynieria + Biznes</h3>
+              <p>
+                Łączymy bogate doświadczenie inżynieryjne z praktycznym
+                rozumieniem procesów biznesowych i operacyjnych.
+              </p>
             </div>
+            <div class="usp-item">
+              <h3>Bezpieczeństwo i Prywatność</h3>
+              <p>
+                Scenariusze wdrażamy na Twoich dedykowanych serwerach. Twoje
+                wrażliwe dane nie trafiają do niekontrolowanych chmur.
+              </p>
+            </div>
+            <div class="usp-item">
+              <h3>Brak Długu Technicznego</h3>
+              <p>
+                Tworzymy architekturę skrojoną na miarę, którą można łatwo
+                skalować i modyfikować w miarę rozwoju firmy.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Case Studies -->
     <section id="case-studies" class="solutions">
-        <div class="container">
-            <div class="section-header">
-                <h2>Realne wskaźniki zamiast obietnic</h2>
-                <p>Zobacz, jak automatyzacja przekłada się na wyniki operacyjne.</p>
-            </div>
-            <div class="grid-2">
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <h3>Automatyczny obieg leadów i kalkulacje</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <div class="case-box">
-                            <span class="case-badge badge-before">Przed wdrożeniem</span>
-                            <p>Ręczna analiza oferty z załączników PDF, przepisywanie danych i przygotowanie kalkulacji trwało średnio 3 godziny.</p>
-                        </div>
-                        <div class="case-box">
-                            <span class="case-badge badge-after">Po wdrożeniu n8n + AI</span>
-                            <p>Automatyczny przepływ odczytuje plik, weryfikuje dane i przygotowuje gotową ofertę w systemie CRM w mniej niż 2 minuty.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <h3>Akwizycja danych z maszyn produkcyjnych</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <div class="case-box">
-                            <span class="case-badge badge-before">Przed wdrożeniem</span>
-                            <p>Przestoje linii zauważane były dopiero po fakcie, a raportowanie wydajności odbywało się raz w tygodniu na papierze.</p>
-                        </div>
-                        <div class="case-box">
-                            <span class="case-badge badge-after">Po wdrożeniu IoT + n8n</span>
-                            <p>Integracja czujników z komunikatorami firmowymi wysyła alerty w czasie rzeczywistym i generuje codzienne pulpity nawigacyjne.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Realne wskaźniki zamiast obietnic</h2>
+          <p>Zobacz, jak automatyzacja przekłada się na wyniki operacyjne.</p>
         </div>
+        <div class="grid-2">
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <h3>Automatyczny obieg leadów i kalkulacje</h3>
+            </div>
+            <div class="case-study-body">
+              <div class="case-box">
+                <span class="case-badge badge-before">Przed wdrożeniem</span>
+                <p>
+                  Ręczna analiza oferty z załączników PDF, przepisywanie danych
+                  i przygotowanie kalkulacji trwało średnio 3 godziny.
+                </p>
+              </div>
+              <div class="case-box">
+                <span class="case-badge badge-after"
+                  >Po wdrożeniu n8n + AI</span
+                >
+                <p>
+                  Automatyczny przepływ odczytuje plik, weryfikuje dane i
+                  przygotowuje gotową ofertę w systemie CRM w mniej niż 2
+                  minuty.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <h3>Akwizycja danych z maszyn produkcyjnych</h3>
+            </div>
+            <div class="case-study-body">
+              <div class="case-box">
+                <span class="case-badge badge-before">Przed wdrożeniem</span>
+                <p>
+                  Przestoje linii zauważane były dopiero po fakcie, a
+                  raportowanie wydajności odbywało się raz w tygodniu na
+                  papierze.
+                </p>
+              </div>
+              <div class="case-box">
+                <span class="case-badge badge-after"
+                  >Po wdrożeniu IoT + n8n</span
+                >
+                <p>
+                  Integracja czujników z komunikatorami firmowymi wysyła alerty
+                  w czasie rzeczywistym i generuje codzienne pulpity
+                  nawigacyjne.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Pricing Section -->
     <section id="cennik">
-        <div class="container">
-            <div class="section-header">
-                <h2>Przejrzysty model współpracy</h2>
-                <p>Wybierz wariant dopasowany do obecnego etapu rozwoju Twojego przedsiębiorstwa.</p>
-            </div>
-            <div class="grid-3">
-                <div class="pricing-card">
-                    <div class="price-title">Audit & Blueprint</div>
-                    <div class="price-desc">Dla firm chcących zidentyfikować optymalne obszary automatyzacji.</div>
-                    <div class="price-val">od 3 000 PLN <span>netto</span></div>
-                    <ul class="price-features">
-                        <li>Pełna analiza procesów operacyjnych</li>
-                        <li>Mapowanie wąskich gardeł</li>
-                        <li>Schemat architektury n8n / AI</li>
-                        <li>Wyliczenie przewidywanego ROI</li>
-                    </ul>
-                    <a href="#kontakt" class="btn btn-outline">Zamów Audyt</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="featured-badge">Najpopularniejszy</div>
-                    <div class="price-title">Dedykowane Wdrożenie</div>
-                    <div class="price-desc">Kompleksowe zaprojektowanie i uruchomienie automatyzacji.</div>
-                    <div class="price-val">Wycena <span>projektowa</span></div>
-                    <ul class="price-features">
-                        <li>Projekt i budowa scenariuszy n8n</li>
-                        <li>Integracje API (CRM, ERP, IoT)</li>
-                        <li>Wdrożenie agentów sztucznej inteligencji</li>
-                        <li>Testy oraz szkolenie zespołu</li>
-                    </ul>
-                    <a href="#kontakt" class="btn btn-primary">Wyceń Projekt</a>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="price-title">Utrzymanie & Rozwój</div>
-                    <div class="price-desc">Ciągła opieka, monitoring oraz stała rozbudowa systemów.</div>
-                    <div class="price-val">od 3 500 PLN <span>netto / mc</span></div>
-                    <ul class="price-features">
-                        <li>Monitoring scenariuszy 24/7</li>
-                        <li>Utrzymanie dedykowanych serwerów</li>
-                        <li>Optymalizacja istniejących przepływów</li>
-                        <li>Pula godzin na nowe mikro-automatyzacje</li>
-                    </ul>
-                    <a href="#kontakt" class="btn btn-outline">Wybierz Abonament</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Przejrzysty model współpracy</h2>
+          <p>
+            Wybierz wariant dopasowany do obecnego etapu rozwoju Twojego
+            przedsiębiorstwa.
+          </p>
         </div>
+        <div class="grid-3">
+          <div class="pricing-card">
+            <div class="price-title">Audit & Blueprint</div>
+            <div class="price-desc">
+              Dla firm chcących zidentyfikować optymalne obszary automatyzacji.
+            </div>
+            <div class="price-val">od 3 000 PLN <span>netto</span></div>
+            <ul class="price-features">
+              <li>Pełna analiza procesów operacyjnych</li>
+              <li>Mapowanie wąskich gardeł</li>
+              <li>Schemat architektury n8n / AI</li>
+              <li>Wyliczenie przewidywanego ROI</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-outline">Zamów Audyt</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="featured-badge">Najpopularniejszy</div>
+            <div class="price-title">Dedykowane Wdrożenie</div>
+            <div class="price-desc">
+              Kompleksowe zaprojektowanie i uruchomienie automatyzacji.
+            </div>
+            <div class="price-val">Wycena <span>projektowa</span></div>
+            <ul class="price-features">
+              <li>Projekt i budowa scenariuszy n8n</li>
+              <li>Integracje API (CRM, ERP, IoT)</li>
+              <li>Wdrożenie agentów sztucznej inteligencji</li>
+              <li>Testy oraz szkolenie zespołu</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-primary">Wyceń Projekt</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="price-title">Utrzymanie & Rozwój</div>
+            <div class="price-desc">
+              Ciągła opieka, monitoring oraz stała rozbudowa systemów.
+            </div>
+            <div class="price-val">od 3 500 PLN <span>netto / mc</span></div>
+            <ul class="price-features">
+              <li>Monitoring scenariuszy 24/7</li>
+              <li>Utrzymanie dedykowanych serwerów</li>
+              <li>Optymalizacja istniejących przepływów</li>
+              <li>Pula godzin na nowe mikro-automatyzacje</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-outline">Wybierz Abonament</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section & Form -->
     <section id="kontakt" class="cta-section">
-        <div class="container">
-            <h2>Zrób pierwszy krok w stronę automatyzacji</h2>
-            <p>Porozmawiajmy o procesach w Twojej firmie i sprawdźmy, ile czasu i kosztów możesz zaoszczędzić.</p>
+      <div class="container">
+        <h2>Zrób pierwszy krok w stronę automatyzacji</h2>
+        <p>
+          Porozmawiajmy o procesach w Twojej firmie i sprawdźmy, ile czasu i
+          kosztów możesz zaoszczędzić.
+        </p>
 
-            <div class="steps-inline">
-                <div class="step-item">
-                    <div class="step-num">1</div>
-                    <h4>Wypełnij formularz</h4>
-                    <p>Podaj podstawowe informacje o firmie.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">2</div>
-                    <h4>Rozmowa (15 min)</h4>
-                    <p>Omówimy Twoje obecne wyzwania operacyjne.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">3</div>
-                    <h4>Plan i Wycena</h4>
-                    <p>Otrzymasz dedykowany schemat automatyzacji.</p>
-                </div>
-            </div>
-
-            <div class="form-card">
-                <form id="leadForm" action="https://n8n.jajony.com/webhook-test/matysiuk-www" onsubmit="handleSubmit(event)" method="POST">
-                    <div class="form-group">
-                        <label for="name">Imię i Nazwisko</label>
-                        <input type="text" id="name" class="form-control" placeholder="np. Jan Kowalski" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail służbowy</label>
-                        <input type="email" id="email" class="form-control" placeholder="jan@firma.pl" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Nazwa firmy / Branża</label>
-                        <input type="text" id="company" class="form-control" placeholder="np. Firma Produkcyjna / E-commerce">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Opisz krótko proces, który chcesz zautomatyzować</label>
-                        <textarea id="message" class="form-control" rows="3" placeholder="np. Ręczne przesyłanie zamówień z e-maila do systemu ERP..."></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Wyślij i zamawiam rozmowę</button>
-                </form>
-            </div>
-            <div id="status">
-
-            </div>
+        <div class="steps-inline">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <h4>Wypełnij formularz</h4>
+            <p>Podaj podstawowe informacje o firmie.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <h4>Rozmowa (15 min)</h4>
+            <p>Omówimy Twoje obecne wyzwania operacyjne.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <h4>Plan i Wycena</h4>
+            <p>Otrzymasz dedykowany schemat automatyzacji.</p>
+          </div>
         </div>
+
+        <div class="form-card">
+          <form
+            id="leadForm"
+            action="https://n8n.jajony.com/webhook-test/matysiuk-www"
+            onsubmit="handleSubmit(event)"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Imię i Nazwisko</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="np. Jan Kowalski"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail służbowy</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="jan@firma.pl"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="company">Nazwa firmy / Branża</label>
+              <input
+                type="text"
+                id="company"
+                class="form-control"
+                placeholder="np. Firma Produkcyjna / E-commerce"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message"
+                >Opisz krótko proces, który chcesz zautomatyzować</label
+              >
+              <textarea
+                id="message"
+                class="form-control"
+                rows="3"
+                placeholder="np. Ręczne przesyłanie zamówień z e-maila do systemu ERP..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn btn-primary"
+              style="width: 100%"
+            >
+              Wyślij i zamawiam rozmowę
+            </button>
+          </form>
+        </div>
+        <div id="status"></div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">Matysiuk sp. z o.o.</div>
-            <div>Białystok, Polska | kontakt@matysiuk.pl</div>
-            <div>&copy; 2026 Matysiuk sp. z o.o. Wszelkie prawa zastrzeżone.</div>
-        </div>
+      <div class="footer-container">
+        <div class="footer-logo">Matysiuk sp. z o.o.</div>
+        <div>Białystok, Polska | kontakt@matysiuk.pl</div>
+        <div>&copy; 2026 Matysiuk sp. z o.o. Wszelkie prawa zastrzeżone.</div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle logic
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navLinks = document.getElementById('navLinks');
+      // Mobile menu toggle logic
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navLinks = document.getElementById("navLinks");
 
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+      mobileToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu on link click
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
         });
+      });
 
-        // Close menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Form submission handling
-        function handleSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Dziękujemy ${name}! Twój formularz został wysłany. Skontaktujemy się w ciągu 24 godzin.`);
-            document.getElementById('leadForm').reset();
-        }
+            // Form submission handling
+        // function handleSubmit(e) {
+        //   e.preventDefault();
+        //   const name = document.getElementById("name").value;
+        //   alert(
+        //     `Dziękujemy ${name}! Twój formularz został wysłany. Skontaktujemy się w ciągu 24 godzin.`,
+        //   );
+        // }
     </script>
-    <script>
-    const form = document.getElementById("leadForm");
-    const button = document.getElementById("submitBtn");
-    const status = document.getElementById("status");
 
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
+<script>
+  const form = document.getElementById("leadForm");
+  const button = document.getElementById("submitBtn");
+  const status = document.getElementById("status");
 
-      if (button.disabled) return;
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-      button.disabled = true;
-      button.textContent = "Wysyłanie…";
-      status.textContent = "";
-      delete status.dataset.type;
+    if (button.disabled) return;
 
-      try {
-        const data = new URLSearchParams(new FormData(form));
+    const data = {
+      imie: form.elements.namedItem("name").value.trim(),
+      email: form.elements.namedItem("email").value.trim(),
+      telefon: form.elements.namedItem("company").value.trim(),
+      wiadomosc: form.elements.namedItem("message").value.trim()
+    };
 
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: data
-        });
+    console.log("Adres webhooka:", form.action);
+    console.log("Wysyłane dane:", data);
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
+    button.disabled = true;
+    button.textContent = "Wysyłanie…";
+    status.textContent = "";
+    delete status.dataset.type;
 
-        status.dataset.type = "success";
-        status.textContent = "Dane zostały przyjęte do przetworzenia.";
-        form.reset();
-      } catch (error) {
-        console.error("Błąd wysyłania formularza:", error);
 
-        status.dataset.type = "error";
-        status.textContent =
-          "Nie udało się potwierdzić przyjęcia danych. " +
-          "Sprawdź połączenie i konfigurację webhooka.";
-      } finally {
-        button.disabled = false;
-        button.textContent = "Wyślij wiadomość";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
       }
-    });
-  </script>
-    
-    
-    
-</body>
+
+      status.dataset.type = "success";
+      status.textContent = "Dziękujemy! Formularz został wysłany. Skontaktujemy się w ciągu 24 godzin.";
+      form.reset();
+    } catch (error) {
+      console.error("Błąd wysyłania:", error);
+
+      status.dataset.type = "error";
+      status.textContent =
+        "Nie udało się potwierdzić przyjęcia danych. " +
+        "Sprawdź konsolę przeglądarki i konfigurację webhooka.";
+    } finally {
+      button.disabled = false;
+      button.textContent = "Wyślij wiadomość";
+    }
+
+    document.getElementById("leadForm").reset();
+  });
+</script>
+    </script>
+  </body>
 </html>
